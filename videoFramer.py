@@ -8,9 +8,9 @@ import csv
 from subprocess import call
 
 video_list=[]
-url_dir="frames/"
+url_dir="frames25_10_2016/"
 #ffmpeg -i input.flv -ss 00:00:14.435 -vframes 1 out.png
-frame_number=10
+frame_number=4
 def fileRead(url):
 
 	with open(url, 'rb') as f:
@@ -30,9 +30,9 @@ directory=call(["pwd"])
 
 video_format=["mp4","mpg","mpeg", "mkv"]
 
-results=os.listdir(os.curdir+"/videoArchive")
+results=os.listdir(os.curdir+"/videoArchive25_10_2016")
 for single_result in results:
-	length=call(["avprobe", "videoArchive/" + single_result])
+	length=call(["avprobe", "videoArchive25_10_2016/" + single_result])
 
 	print length
 
@@ -43,8 +43,8 @@ for single_result in results:
 		for x in range(1, frame_number):
 			try:
 	
-				call(["avconv", "-i","videoArchive/"+str(single_result), "-ss", "00:0"+str(x)+":00", "-t", "1", "-qscale", "1", "-r", "1", "-f", "image2", url_dir+str(single_result.split(".")[0])+str(x)+"_1.jpg"])
-				call(["avconv", "-i","videoArchive/"+str(single_result), "-ss", "00:0"+str(x)+":30", "-t", "1", "-qscale", "1", "-r", "1", "-f", "image2", url_dir+str(single_result.split(".")[0])+str(x)+"_2.jpg"])
+				call(["avconv", "-i","videoArchive25_10_2016/"+str(single_result), "-ss", "00:0"+str(x)+":00", "-t", "1", "-qscale", "1", "-r", "1", "-f", "image2", url_dir+str(single_result.split(".")[0])+str(x)+"_1.jpg"])
+				call(["avconv", "-i","videoArchive25_10_2016/"+str(single_result), "-ss", "00:0"+str(x)+":30", "-t", "1", "-qscale", "1", "-r", "1", "-f", "image2", url_dir+str(single_result.split(".")[0])+str(x)+"_2.jpg"])
 				
 			except:
 				pass

@@ -8,8 +8,8 @@ import csv
 site = "https://www.youtube.com/watch?v="
 
 timing="?t=15s"
-root="images11-10-2016"
-delay=30
+root="images18-10-2016"
+delay=10
 min_video_length=240
 video_list=[]
 
@@ -47,28 +47,35 @@ def getScreenshots(tag,video):
 		except OSError:
 		    if not os.path.isdir(new_root):
 		        raise
-		for x in range(1, 4):
+		for x in range(1, 30):
 			sleep(delay)
 			for y in range(1, 3):
-				fox.save_screenshot(new_root+"/"+tag+"_"+video+'.png') # saves screenshot of entire page
-				im = Image.open(new_root+"/"+tag+"_"+video+'.png') # uses PIL library to open image in memory
-				left = location['x']
-				top = location['y']
-				right = location['x'] + size['width']
-				bottom = location['y'] + size['height']
-				label=x+y
-				im = im.crop((left, top, right, bottom)) # defines crop points
-				im.save(new_root+"/"+tag+"_"+video+'_'+str(x)+'_'+str(y)+'.png') # saves new cropped image
-				im.save(root+"/"+tag+"_"+video+'_'+str(x)+'_'+str(y)+'.png') # saves new cropped image
-				print(new_root+"/"+tag+"_"+video+'_'+str(x)+'_'+str(y)+'.png')
+				sleep(5)
+				try: 
+					fox.save_screenshot(new_root+"/"+tag+"_"+video+'.png') # saves screenshot of entire page
+					im = Image.open(new_root+"/"+tag+"_"+video+'.png') # uses PIL library to open image in memory
+					left = location['x']
+					top = location['y']
+					right = location['x'] + size['width']
+					bottom = location['y'] + size['height']
+					label=x+y
+					im = im.crop((left, top, right, bottom)) # defines crop points
+					im.save(new_root+"/"+tag+"_"+video+'_'+str(x)+'_'+str(y)+'.png') # saves new cropped image
+					im.save(root+"/"+tag+"_"+video+'_'+str(x)+'_'+str(y)+'.png') # saves new cropped image
+					print(new_root+"/"+tag+"_"+video+'_'+str(x)+'_'+str(y)+'.png')
+				except:
+					pass
+					x=30
+
 		os.remove(new_root+"/"+tag+"_"+video+'.png') 
 	fox.quit()
 
 
-video_list=fileRead("url.txt")
+video_list=fileRead("urlRai.txt")
 
 for tag,video in video_list:
 	try:
+		print(tag,video)
 		getScreenshots(tag,video)
 	except:
 		pass	

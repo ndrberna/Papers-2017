@@ -6,7 +6,10 @@ import time
 import os
 import csv
 from subprocess import call
-
+import time
+import os
+import csv
+import glob
 video_list=[]
 
 
@@ -20,11 +23,14 @@ def fileRead(url):
 	return video_list
 	
 
-video_list=fileRead("url.txt")
+video_list=fileRead("url25_10_2016.csv")
+
+
+
 
 for tag,video in video_list:
 	try:
-		title="-o videoArchive/"+str(tag)+"_%(id)s"
+		title="-o videoArchive25_10_2016/"+str(tag)+"_%(id)s"
 		call(["youtube-dl",title,str(video)])
 
 	except:

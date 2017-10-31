@@ -35,8 +35,12 @@ min_video_length=240
 #video_list=['DZ9DG1fMu3A','1Yxozs6Vy44','e7ZqtntGESg','vbNPhlnBMcw','kntfWStl4GQ','m7WdSc8v3ec','gHbdbh0JZwg','vbNPhlnBMcw','Aw2wldpj0Lg','h0wwinu7wio','pxiX5eKnKB8','NYlhB1bpKyk','E3vv6dlJZAA','m5RR88UypBE','_3LrmDcyM74','ZaIe2i7Xj4U','9XQNEBXVRxo']
 
 
-tag='fakeRai'
-video_list=['FlthV_MyTOA','a0rNZu0QLbk','8N8lEQIvOYg','cflGOEAaXVc','Unrq8liEX-U','28vVjFofR9k','4WlFLAm4ujk','BFprFy3QKVI','cIH87u4w-sU','GJ1-p9KlKOM','G02we3upyAc','3ECBlyfR8c4','6bZNEYV-ft4','H0PDaQXMte8','8aINVsVO7GU','8aINVsVO7GU']
+#tag='fakeRai'
+#video_list=['FlthV_MyTOA','a0rNZu0QLbk','8N8lEQIvOYg','cflGOEAaXVc','Unrq8liEX-U','28vVjFofR9k','4WlFLAm4ujk','BFprFy3QKVI','cIH87u4w-sU','GJ1-p9KlKOM','G02we3upyAc','3ECBlyfR8c4','6bZNEYV-ft4','H0PDaQXMte8','8aINVsVO7GU','8aINVsVO7GU']
+
+
+tag='Rai1'
+video_list=['PRTILCNsSGE','kcGFVz9lrn4','6kYKQ-93sLA','35-YXUAkYRo','iK8f05HF3gg']
 
 
 def getScreenshots(video):
